@@ -8,8 +8,8 @@ const nodeTypes = {
   album: AlbumNode,
 };
 
-function GraphView( {albums} ) {
-  const nodes = buildAlbumNodes(albums);
+function GraphView( {albums, onDeleteAlbum} ) {
+  const nodes = buildAlbumNodes(albums, onDeleteAlbum);
   const edges = buildAlbumEdges(albums);
 
   return (

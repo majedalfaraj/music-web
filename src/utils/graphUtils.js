@@ -1,4 +1,4 @@
-export function buildAlbumNodes(albums) {
+export function buildAlbumNodes(albums, onDeleteAlbum) {
     return albums.map((album, index) => ({
         id: album.id,
         type: "album",
@@ -8,6 +8,7 @@ export function buildAlbumNodes(albums) {
         },
         data: {
             album,
+            onDeleteAlbum,
         },
     }));
 }

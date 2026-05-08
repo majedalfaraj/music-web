@@ -194,3 +194,39 @@
 .album-node:hover {
   transform: scale(1.1);
 }
+
+.form-button {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  width: 64px;
+  height: 64px;
+  border: none;
+  border-radius: 999px;
+  background: #1db954;
+  color: white;
+  font-size: 36px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.35);
+
+  transition:
+    transform 0.15s ease,
+    background 0.15s ease,
+    box-shadow 0.15s ease;
+  z-index: 1000;
+}
+
+.delete-node-button {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  border: none;
+  border-radius: 999px;
+  width: 22px;
+  height: 22px;
+  cursor: pointer;
+  background: red;
+  color: white;
+}

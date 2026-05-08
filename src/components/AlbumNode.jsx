@@ -4,6 +4,9 @@ function AlbumNode({ data }) {
     const album = data.album;
     return (
         <div className="album-node">
+
+        <button className="delete-node-button" onClick={() => data.onDeleteAlbum(album.id)}>×</button>
+
         <Handle type="target" position={Position.Left} />
         <p><strong>Title: {album.title}</strong></p>
         <p>Artist: {album.artist}</p>

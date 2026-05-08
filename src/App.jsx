@@ -22,19 +22,27 @@ function App() {
     }
   });
 
+  const [isFormOpen, setIsFormOpen] = useState(false);
+
   useEffect(() => {
     localStorage.setItem("albums", JSON.stringify(albumList));
   }, [albumList]);
 
   function handleAddAlbum(newAlbum) {
       setAlbumList([...albumList, newAlbum]);
+      setIsFormOpen(false);
+  }
+
+  function handleDeleteAlbum(albumID) {
+      setAlbumList(albumList.filter((album) => album.id != albumID));
   }
 
   return (
       <div>
         <h1> Music Web </h1>
-        <AddAlbumForm onAddAlbum={handleAddAlbum}/>
-        <GraphView albums={albumList}/>
+        <button className="form-button" onClick={() => setIsFormOpen((cur) => !cur)}> {isFormOpen ? "×" : "+"} </button>
+        {isFormOpen && <AddAlbumForm onAddAlbum={handleAddAlbum} />}
+        <GraphView albums={albumList} onDeleteAlbum={handleDeleteAlbum}/>
       </div>
   );
 }

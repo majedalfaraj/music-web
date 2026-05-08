@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-function AddAlbumForm({ onAddAlbum }) {
+function AddAlbumForm({ onAddAlbum } ) {
     const [title, setTitle] = useState("");
     const [artist, setArtist] = useState("");
     const [tags, setTags] = useState("");
